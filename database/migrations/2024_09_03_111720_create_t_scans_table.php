@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('t_mumeneen', function (Blueprint $table) {
+        Schema::create('t_scans', function (Blueprint $table) {
             $table->id();
-            $table->integer('its')->unique();
-            $table->string('name');
-            $table->string('mobile')->nullable();
-            $table->enum('gender', ['male', 'female']);
-            $table->integer('age')->nullable();
-            $table->integer('arabic_name')->nullable();
+            $table->integer('event_id');
+            $table->integer('its');
+            $table->integer('entered_by');
             $table->timestamps();
         });
     }
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('t_mumeneen');
+        Schema::dropIfExists('t_scans');
     }
 };
