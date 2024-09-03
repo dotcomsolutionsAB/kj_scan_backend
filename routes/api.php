@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CreateController;
 use App\Http\Controllers\ViewController;
+use App\Http\Controllers\UpUpdateController;
 
 // Route::get('/user', function (Request $request) {
 //     return $request->user();
@@ -23,6 +24,10 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/events', [ViewController::class, 'get_events']);
 
     Route::post('/get_scan', [CreateController::class, 'scanning']);
+
+    Route::post('/update_user', [UpdateController::class, 'user']);
+
+    Route::post('/update_mumeneen', [UpdateController::class, 'mumeneen']);
 
     Route::post('/import_users', [CsvImportController::class, 'importUser']);
 });

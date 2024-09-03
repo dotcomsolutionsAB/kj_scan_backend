@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ScansModel;
 use Illuminate\Support\Facades\Auth;
+use App\Models\MumeneenModel;
 
 class CreateController extends Controller
 {
@@ -35,6 +36,9 @@ class CreateController extends Controller
             ]);
 
             if (isset($get_scan_record)) {
+
+                // $get_mumeneen_record = MumeneenModel::select('name')->where('its',  $create_scan->its)->get();
+                // dd($get_mumeneen_record[0]->name);
                 return response()->json([
                     'message' => 'Scan created successfully!',
                     'data' => $get_scan_record
