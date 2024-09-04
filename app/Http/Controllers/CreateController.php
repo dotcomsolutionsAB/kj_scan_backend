@@ -18,7 +18,7 @@ class CreateController extends Controller
         ]);
 
         $get_existing_record = ScansModel::where('event_id', $request->input('event_id'))
-                                            ->where('its', 123456)
+                                            ->where('its',  $request->input('its'))
                                             ->get();
         
         if ($get_existing_record->isEmpty()) {
