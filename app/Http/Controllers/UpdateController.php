@@ -13,7 +13,7 @@ class UpdateController extends Controller
 
     public function user(Request $request)
     {
-        $get_user = Auth::User();
+        $get_user = Auth::id();
 
         $request->validate([
             'name' => 'required',
