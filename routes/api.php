@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CreateController;
 use App\Http\Controllers\ViewController;
-use App\Http\Controllers\UpUpdateController;
+use App\Http\Controllers\UpdateController;
 
 // Route::get('/user', function (Request $request) {
 //     return $request->user();
