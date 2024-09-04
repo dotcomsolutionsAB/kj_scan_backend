@@ -15,7 +15,7 @@ class ViewController extends Controller
     {    
         $get_user_records = User::select('name','email','mobile')->where('id', Auth::id())->get();
         
-        if (isset($get_user_records) && (!$get_user_orders->isEmpty())) {
+        if (isset($get_user_records) && (!$get_user_records->isEmpty())) {
             return response()->json([
                 'message' => 'Fetch data successfully!',
                 'data' => $get_user_records
