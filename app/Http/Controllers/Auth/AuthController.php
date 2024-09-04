@@ -194,14 +194,14 @@ class AuthController extends Controller
                 $response = $whatsAppUtility->sendWhatsApp($mobile, $templateParams, $mobile, 'OTP Campaign');
                 
                 return response()->json([
-                    'message' => 'Otp store successfully!',
+                    'message' => 'Otp send successfully!',
                     'data' => $store_otp
                 ], 200);
             }
 
         else {
                 return response()->json([
-                'message' => 'Fail to store otp successfully!',
+                'message' => 'Sorry, fail to send otp',
                 'data' => $store_otp
                 ], 501);
             }
