@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('mobile')->nullable();
             $table->enum('gender', ['male', 'female']);
             $table->integer('age')->nullable();
-            $table->integer('arabic_name')->nullable();
+            $table->string('arabic_name')->nullable();
             $table->timestamps();
         });
     }
