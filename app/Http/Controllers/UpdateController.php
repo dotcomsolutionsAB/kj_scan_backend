@@ -18,6 +18,7 @@ class UpdateController extends Controller
             'name' => 'required',
             'email' => 'required',
             'mobile' => 'required',
+            'password' => 'required',
         ]);
 
         $update_user_record = User::where('id', $get_user)
