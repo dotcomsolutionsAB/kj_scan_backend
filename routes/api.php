@@ -25,9 +25,9 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     Route::post('/get_scan', [CreateController::class, 'scanning']);
 
-    Route::post('/update_user', [UpdateController::class, 'user']);
+    Route::patch('/update_user', [UpdateController::class, 'user']);
 
-    Route::post('/update_mumeneen', [UpdateController::class, 'mumeneen']);
+    Route::patch('/update_mumeneen', [UpdateController::class, 'mumeneen']);
 
     Route::post('/import_users', [CsvImportController::class, 'importUser']);
 });
