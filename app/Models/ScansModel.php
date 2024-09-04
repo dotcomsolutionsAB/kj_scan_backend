@@ -15,5 +15,8 @@ class ScansModel extends Model
         'event_id',
         'its',
         'entered_by',
+        // 'memeneen_name',
+        // 'memeneen_gender',
+        'gender',
     ];
 }

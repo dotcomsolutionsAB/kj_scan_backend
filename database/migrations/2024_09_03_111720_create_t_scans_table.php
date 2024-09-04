@@ -16,6 +16,8 @@ return new class extends Migration
             $table->integer('event_id');
             $table->integer('its');
             $table->integer('entered_by');
+            // $table->string('name');
+            $table->enum('status', ['active', 'completed']);
             $table->timestamps();
         });
     }
