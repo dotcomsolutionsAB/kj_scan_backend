@@ -27,7 +27,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     Route::patch('/update_user', [UpdateController::class, 'user']);
 
-    Route::patch('/update_mumeneen', [UpdateController::class, 'mumeneen']);
+    Route::patch('/update_mumeneen/{id}', [UpdateController::class, 'mumeneen']);
 
     Route::post('/import_users', [CsvImportController::class, 'importUser']);
 });
