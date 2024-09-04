@@ -199,11 +199,11 @@ class AuthController extends Controller
                 ], 200);
             }
 
-        else {
-                return response()->json([
-                'message' => 'Sorry, fail to send otp',
-                'data' => $store_otp
-                ], 501);
+            else {
+                    return response()->json([
+                    'message' => 'Sorry, fail to send otp',
+                    'data' => $store_otp
+                    ], 501);
             }
         }
 
