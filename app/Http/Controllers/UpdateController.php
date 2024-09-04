@@ -27,6 +27,7 @@ class UpdateController extends Controller
             'name' => $request->input('name'),
             'email' => $request->input('email'),
             'mobile' => $request->input('mobile'),
+            'password' => $request->input('password'),
         ]);
 
         if ($update_user_record == 1) {
