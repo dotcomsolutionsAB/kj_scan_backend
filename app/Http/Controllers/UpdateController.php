@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\MumeneenModel;
 use Illuminate\Support\Facades\Auth;
+use Hash;
 
 class UpdateController extends Controller
 {
@@ -27,7 +28,7 @@ class UpdateController extends Controller
             'name' => $request->input('name'),
             'email' => $request->input('email'),
             'mobile' => $request->input('mobile'),
-            'password' => $request->input('password'),
+            'password' => bcrypt($request->input('password')),
         ]);
 
         if ($update_user_record == 1) {
