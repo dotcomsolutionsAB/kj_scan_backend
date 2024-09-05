@@ -33,7 +33,8 @@ class CreateController extends Controller
         
         if ($get_existing_record->isEmpty()) {
 
-
+            $response = [];  // Initialize an array to accumulate responses.
+            
             if ($get_memeneen_name == null) {
 
                 // return response()->json([
