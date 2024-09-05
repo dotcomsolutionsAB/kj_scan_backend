@@ -41,7 +41,7 @@ class CreateController extends Controller
                 // ], 422);
                 // echo "User not present";
                 // Instead of stopping execution, store the error message
-                $response['errors'] = 'User not present';
+                $response['errors'][] = 'User not present';
 
                 $request->validate([
                     'gender' => 'required|string|in:male,female',
