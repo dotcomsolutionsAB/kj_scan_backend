@@ -36,9 +36,10 @@ class CreateController extends Controller
 
             if ($get_memeneen_name == null) {
 
-                return response()->json([
-                    'error' => 'Input Gender',
-                ], 422);
+                // return response()->json([
+                //     'error' => 'Input Gender',
+                // ], 422);
+                echo "User not present";
 
                 $request->validate([
                     'gender' => 'required|string|in:male,female',
