@@ -33,16 +33,16 @@ class CreateController extends Controller
         
         if ($get_existing_record->isEmpty()) {
 
-            $response = [];  // Initialize an array to accumulate responses.
-            
+            // $response = [];  // Initialize an array to accumulate responses.
+
             if ($get_memeneen_name == null) {
 
                 // return response()->json([
                 //     'error' => 'Input Gender',
                 // ], 422);
-                // echo "User not present";
+                echo "User not present";
                 // Instead of stopping execution, store the error message
-                $response['errors'][] = 'User not present';
+                // $response['errors'][] = 'User not present';
 
                 $request->validate([
                     'gender' => 'required|string|in:male,female',
