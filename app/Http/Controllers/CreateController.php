@@ -39,7 +39,9 @@ class CreateController extends Controller
                 // return response()->json([
                 //     'error' => 'Input Gender',
                 // ], 422);
-                echo "User not present";
+                // echo "User not present";
+                // Instead of stopping execution, store the error message
+                $response['errors'] = 'User not present';
 
                 $request->validate([
                     'gender' => 'required|string|in:male,female',
