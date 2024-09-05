@@ -17,16 +17,6 @@ class CreateController extends Controller
             'its' => 'required|integer',
         ]);
 
-        $get_total_count = ScansModel::count();
-        $get_male_count = ScansModel::where('gender', 'male')->count();
-        $get_female_count = ScansModel::where('gender', 'female')->count();
-        
-        $count_records = array([
-            'total_record' => $get_total_count,
-            'total_male_record' => $get_male_count,
-            'total_female_record' => $get_female_count,
-        ]);
-
         $get_existing_record = ScansModel::where('event_id', $request->input('event_id'))
                                             ->where('its',  $request->input('its'))
                                             ->get();
@@ -71,6 +61,16 @@ class CreateController extends Controller
                 'gender' => $memeneen_gender,
             ]);
 
+            $get_total_count = ScansModel::count();
+            $get_male_count = ScansModel::where('gender', 'male')->count();
+            $get_female_count = ScansModel::where('gender', 'female')->count();
+            
+            $count_records = array([
+                'total_record' => $get_total_count,
+                'total_male_record' => $get_male_count,
+                'total_female_record' => $get_female_count,
+            ]);
+
             // $get_user = Auth::user();
             $get_memeneen_name = 
             $get_scan_record = array([
@@ -104,6 +104,16 @@ class CreateController extends Controller
         else {
             $memeneen_gender = ScansModel::select('gender')
                                             ->where('its', $request->input('its'))->get();
+
+            $get_total_count = ScansModel::count();
+            $get_male_count = ScansModel::where('gender', 'male')->count();
+            $get_female_count = ScansModel::where('gender', 'female')->count();
+            
+            $count_records = array([
+                'total_record' => $get_total_count,
+                'total_male_record' => $get_male_count,
+                'total_female_record' => $get_female_count,
+            ]);
             $get_scan_record = array([
                 'event_id' => $request->input('event_id'),
                 'its' => $request->input('its'),
@@ -112,6 +122,8 @@ class CreateController extends Controller
                 'gender' => $memeneen_gender[0]->gender,
                 'record_counts' => $count_records,
             ]);
+
+
 
             return response()->json([
                 'message' => 'Already exists!',
