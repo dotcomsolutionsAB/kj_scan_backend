@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('its');
             $table->integer('entered_by');
             // $table->string('name');
-            $table->enum('gender', ['active', 'completed']);
+            $table->enum('gender', ['male', 'female']);
             $table->timestamps();
         });
     }
