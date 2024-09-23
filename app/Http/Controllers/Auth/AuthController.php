@@ -22,12 +22,12 @@ class AuthController extends Controller
             'password' => 'required',
         ]);
         
-            $create_user = User::create([
-                'name' => $request->input('name'),
-                'password' => bcrypt($request->input('password')),
-                'email' => strtolower($request->input('email')),
-                'mobile' => $request->input('mobile'),
-            ]);
+        $create_user = User::create([
+            'name' => $request->input('name'),
+            'password' => bcrypt($request->input('password')),
+            'email' => strtolower($request->input('email')),
+            'mobile' => $request->input('mobile'),
+        ]);
 
 
         if (isset($create_user)) {
